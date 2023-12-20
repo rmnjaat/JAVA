@@ -34,9 +34,21 @@ public class array_search{
 
     public static void main(String[] args){
         
-        int a[]={1,2,3,5,6,7,8};
+        int a[]={-2,-3,4,-1,-2,1,5,-3};
 
-        System.out.println(bs(a,3));
+        int cs=0;
+        int ms=Integer.MIN_VALUE;
+        for(int i=0;i<a.length;i++){
+            cs+=a[i];
+
+            if(cs<0){
+                cs=0;
+            }
+
+            ms=Math.max(ms, cs);
+        }
+
+        System.out.println(ms);
 
 
     }
