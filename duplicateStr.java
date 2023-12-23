@@ -28,6 +28,7 @@ public class duplicateStr {
             
         }
         else{
+            
             mape[cchar-'a']=true;
             str(str, idx+1 , newstr.append(cchar), mape);
 
