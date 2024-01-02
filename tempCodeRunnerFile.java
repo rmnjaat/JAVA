@@ -1,0 +1,1 @@
+ll.next=null;
