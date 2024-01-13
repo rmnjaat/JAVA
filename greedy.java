@@ -143,55 +143,80 @@ public class greedy {
     // }
     // }
 
+
+
+
     // chocolate Problem cutting min cost
 
+    // public static void main(String[] args) {
+
+    //     int n = 4, m = 6;
+
+    //     Integer costVer[] = { 2, 1, 3, 1, 4 };
+    //     Integer costHor[] = { 4, 1, 2 };
+
+    //     // Collection.sort(costVer,(a,b)->a-b);
+    //     Arrays.sort(costVer, Comparator.reverseOrder());
+    //     Arrays.sort(costHor, Comparator.reverseOrder());
+
+    //     int h = 0, v = 0; // pointers
+
+    //     int hp = 1, vp = 1; // peices
+
+    //     int cost = 0;
+    //     while (h < costHor.length && v < costVer.length) {
+    //         if (costVer[v] <= costHor[h]) {
+    //             cost += (costHor[h] * vp);
+    //             hp++;
+    //             h++;
+    //         } else {
+    //             cost += (costVer[v] * hp);
+    //             vp++;
+    //             v++;
+    //         }
+    //     }
+
+    //     while (h < costHor.length) {
+
+    //         cost += (costHor[h] * vp);
+    //         hp++;
+    //         h++;
+    //     }
+
+    //     while (v < costVer.length) {
+
+    //         cost += (costVer[v] * hp);
+    //         vp++;
+    //         v++;
+    //     }
+
+
+    //     System.out.println(cost);
+
+    // }
+
+
+
     public static void main(String[] args) {
+        int price[]={7,1,5,3,6,4};
 
-        int n = 4, m = 6;
+        int buy = price[0];
 
-        Integer costVer[] = { 2, 1, 3, 1, 4 };
-        Integer costHor[] = { 4, 1, 2 };
+        int profit =0;
 
-        // Collection.sort(costVer,(a,b)->a-b);
-        Arrays.sort(costVer, Comparator.reverseOrder());
-        Arrays.sort(costHor, Comparator.reverseOrder());
+        for(int i=1;i<price.length;i++){
 
-        int h = 0, v = 0; // pointers
+            if(buy > price[i]){
+                buy=price[i];
+            }
 
-        int hp = 1, vp = 1; // peices
-
-        int cost = 0;
-        while (h < costHor.length && v < costVer.length) {
-            if (costVer[v] <= costHor[h]) {
-                cost += (costHor[h] * vp);
-                hp++;
-                h++;
-            } else {
-                cost += (costVer[v] * hp);
-                vp++;
-                v++;
+            else if(price[i] - buy > profit){
+                profit =  price[i] - buy;
             }
         }
 
-        while (h < costHor.length) {
-
-            cost += (costHor[h] * vp);
-            hp++;
-            h++;
-        }
-
-        while (v < costVer.length) {
-
-            cost += (costVer[v] * hp);
-            vp++;
-            v++;
-        }
-
-
-        System.out.println(cost);
+        System.out.println(profit);
 
     }
-
-
 
 }
