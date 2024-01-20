@@ -71,28 +71,23 @@ public class binarytreeHW {
 
     }
 
-    public static void Inverbt(Node root) {
+
+        // WRONG
+    public static Node Inverbt(Node root) {
 
         if (root == null) {
-            return;
+            return null;
         }
 
-        int ld = 0;
-        int rd = 0;
+      
+        Node ls =Inverbt(root.left);
+        Node rs =  Inverbt(root.right);
 
-        if (root.left != null && root.right != null) {
-            ld = root.left.data;
+        root.left=ls;
+        root.right=rs;
 
-            rd = root.right.data;
 
-            root.left.data = rd;
-            root.right.data = ld;
-
-        }
-
-        Inverbt(root.left);
-        Inverbt(root.right);
-
+        return root;
     }
 
     public static String getStr(Node root, ArrayList<Node> ans, HashMap<String, Integer> map) {
@@ -189,9 +184,14 @@ public class binarytreeHW {
 
         // }
         // deletleaf(sr, 3);
-        // printpre(sr);
+        printpre(root);
+        Inverbt(root);
+      
+        System.out.println();
+        printpre(root);
 
 
-        System.out.println( max_sum_path(root,-1));
+
+        // System.out.println( max_sum_path(root,-1));
     }
 }
