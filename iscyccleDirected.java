@@ -9,7 +9,7 @@ public class iscyccleDirected {
     
        public Edge(int s, int d){
            this.src=s;
-           this.src=d;
+           this.dest=d;
        }
     
     }
